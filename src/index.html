@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My-travel Site</title>
+    <link rel="stylesheet" href="libs/jquery-ui.min.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="libs/vegas.css">
+    <link rel="stylesheet" href="libs/vegas.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Staatliches&display=swap&family=Do+Hyeon&display=swap');
+    </style>
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+    <script src="libs/jquery-3.5.1.min.js"></script>
+    <script src="libs/jquery-ui.min.js"></script>
+    <script src="libs/vegas.js"></script>
+    <script src="libs/vegas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header id="header">
+            <div class="header_wrap">
+                <a href="/" class="logo_link">
+                    <h1 class="blind">제주트레블</h1>
+                </a>
+
+                <nav id="navigation" class="menu_items right">
+                    <a 
+                        id="login" 
+                        class="item"
+                        onclick="document.getElementById('id01').style.display='block'" 
+                        style="width:auto;">LOGIN</a>
+                    <!-- 로그인 시 -->
+                    <a 
+                        id="mytrip"
+                        class="item">My-Trip</a>  
+                    <img src="images/line_maintop_gray.png" alt="메뉴 라인"> 
+                    <a 
+                        id="register" 
+                        class="item"
+                        onclick="document.getElementById('id01').style.display='block'" 
+                        style="width:auto;">SIGN UP</a>
+                        <!-- 로그인 시 -->
+                    <a 
+                        id="logout"
+                        class="item">LOGOUT</a>
+                </nav>
+            </div>
+        </header>
+
+        <section id="body">
+            <div id="main_banner">
+                <div class="title_wrap typing-txt">
+                    <h1 class="title">어디로 떠나볼까요?</h1>
+                    <p class="title">Where do you want to go?</p>
+                </div>
+                <div class="title_wrap typing">
+                    <h1 class="main_title typing-empty "></h1>
+                    <p class="sub_title typing-empty "></p>
+                </div>
+
+                <div class="date_search_wrap">
+                    <form id="form-search" class="trip_info_form">
+                        <div class="panel-block">
+                            <label for="from" clsas="txt">가는날 선택</label>
+                            <input type="text" id="from" class="input_txt" readonly>
+                        </div>
+                        <div class="panel-block">
+                            <label for="to" class="txt">오는날 선택</label>
+                            <input type="text" id="to" class="input_txt" readonly>
+                        </div>
+                        <div class="btn_panel right">
+                            <img src="../images/icon_search_default.png" alt="검색이미지">
+                            <button type="submit" name="search_btn" class="btn btn_search">검색</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="list_bg">
+                <h2 class="recommand_title">추천 여행지</h2>
+                <div class="list_pannel">
+                    <ul id="list_item_template">
+                    </ul>
+                </div>
+        </section>
+    </div>
+    <div class="modal-root">
+        <div id="id01" class="modal"></div>
+    </div>
+    <script src="scripts/script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="scripts/member.js"></script>
+    <script src="scripts/register.js"></script>
+    <script src="scripts/login.js"></script>
+</body>
+
+</html>

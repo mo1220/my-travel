@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+    <link rel="Stylesheet" href="styles/userPageStyle.css">
+</head>
+
+<body>
+    <section>
+        <div class="modal-content animate">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                title="Close Modal">&times;
+            </span>
+            <form id="form-register">
+                <div class="container">
+                    <h2>회원가입</h2>
+                    <hr>
+                    <label for="userName"><b>Name</b></label>
+                    <input 
+                        type="text" 
+                        placeholder="Enter Name" 
+                        name="name"
+                        id="userName"
+                        required
+                        autofocus>
+                    <label for="userEmail"><b>Email</b></label>
+                    <input 
+                        type="email" 
+                        placeholder="Enter Email" 
+                        name="email"
+                        id="userEmail"
+                        required
+                        autofocus>
+                    <label for="password"><b>Password</b></label>
+                    <input 
+                        type="password" 
+                        placeholder="Enter Password" 
+                        name="password"
+                        id="password"
+                        required>
+                    <label for="password"><b>Confirm Password</b></label>
+                    <input 
+                        type="password" 
+                        placeholder="Repeat Password" 
+                        name="psw-repeat"
+                        id="password-check"
+                        required>
+                    <p>* 비밀번호가 일치하지 않습니다.</p>
+                    <label>
+                        <input type="checkbox" name="agree" style="margin-bottom:15px"
+                        required>
+                        회원가입을 위한 개인정보 제공에 동의합니다.
+                    </label>
+
+                    <div class="clearfix">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                            class="cancelbtn">Cancel</button>
+                        <button type="submit" class="signupbtn">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My-travel Site</title>
+    <link rel="stylesheet" href="http://127.0.0.1:8000/libs/galleria-1.6.1/src/themes/classic/galleria.classic.css"
+        id="galleria-theme-classic">
+    <link rel="stylesheet" href="libs/jquery-ui.min.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Staatliches&display=swap&family=Do+Hyeon&display=swap');
+    </style>
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+    <script src="libs/jquery-3.5.1.min.js"></script>
+    <script src="libs/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+    <script src="libs/galleria-1.6.1/src/themes/classic/galleria.classic.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    
+</head>
+
+<body>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=95c73b71e5badbd14bed5e60f20b2eda"></script>
+
+    <div class="container">
+        <header id="header" class="inverted">
+            <div class="header_wrap">
+                <a href="/" class="logo_link">
+                    <h1 class="blind">제주트레블</h1>
+                </a>
+
+                <nav id="navigation" class="menu_items right">
+                    <a id="login" class="item" onclick="document.getElementById('id01').style.display='block'"
+                        style="width:auto;">LOGIN</a>
+                    <!-- 로그인 시 -->
+                    <a id="mytrip" class="item">My-Trip</a>
+                    <img src="images/line_maintop_gray.png" alt="메뉴 라인">
+                    <a id="register" class="item" onclick="document.getElementById('id01').style.display='block'"
+                        style="width:auto;">SIGN UP</a>
+                    <!-- 로그인 시 -->
+                    <a id="logout" class="item">LOGOUT</a>
+                </nav>
+            </div>
+        </header>
+
+        <section id="body" class="detail">
+            <div class="detail_container">
+                <div class="detail_header">
+                    <img src="images/icon_list_location.png" alt="아이콘">
+                    <div class="detail_header_name"></div> | <span class="detail_header_city_name"></span>
+                    <button class="btn_register">여행지 등록하기</button>
+                </div>
+                <div id="detail_images"></div>
+                <div class="detail_desc">
+                    <div class="detail_title">장소 소개</div>
+                    <div class="detail_desc_txt"></div>
+                </div>
+                <div class="detail_map">
+                    <div class="detail_title">지도</div>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="modal-root">
+        <div id="id01" class="modal"></div>
+    </div>
+
+    <script src="scripts/detail.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="scripts/register.js"></script>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/member.js"></script>
+</body>
+
+</html>

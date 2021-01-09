@@ -1,0 +1,160 @@
+* {box-sizing: border-box;}
+
+.modal-root input[type=text], 
+.modal-root input[type=password],
+.modal-root input[type=email] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  background: #f1f1f1;
+}
+
+.modal-root input[type=text]:focus, 
+.modal-root input[type=password]:focus,
+.modal-root input[type=email]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+.modal-root p {
+  display: none;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-family: system-ui;
+  color: red;
+}
+.modal-root p.warning{
+  display: block;
+}
+
+.modal-root button {
+  display: inline-block;
+  background-color: #00589B;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.9;
+  width: 48%;
+}
+
+.modal-root .cancelbtn {
+  background-color: #F5DF4D;
+  color: #939597;
+}
+
+.modal-root .container {
+  padding: 16px;
+}
+.modal h2{
+    font-size: 2rem;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 5; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0, 0.3);
+  padding-top: 50px;
+  overflow: hidden;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; 
+  border-radius: 1rem;
+  max-width: 700px;
+  width: 80%;
+  position: relative;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 20px;
+}
+.close {
+  position: absolute;
+  right: 35px;
+  top: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+.clearfix {
+  display: flex;
+}
+
+
+/* login Page style */
+.login_wrap .submitbtn{
+    width: 100%;
+}
+.login_wrap .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+  }
+  
+.login_wrap .cancelbtn_container {
+    padding: 0 16px 16px;
+  }
+
+.login_wrap .cancelbtn_container .psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+.login_wrap .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    padding-top: 0;
+  }
+  
+  .login_wrap .close {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+   
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.66s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+    .login_wrap .cancelbtn, .signupbtn {
+        width: 100%;
+     }
+  }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <link rel="Stylesheet" href="styles/userPageStyle.css">
+</head>
+
+<body>
+    <section class="login_wrap">
+        <div class="modal-content animate">
+            <div class="container">
+                <form id="login-form">
+                    <h2>로그인</h2>
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                        title="Close Modal">&times;</span>
+                    <hr>
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" placeholder="Enter User Email" id="email" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" id="psw" required>
+
+                    <button type="submit" class="submitbtn">Login</button>
+                    <label>
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+            </div>
+            <hr>
+            </form>
+            <div class="cancelbtn_container">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                    class="cancelbtn">Cancel</button>
+                <sapn class="psw">
+                    Forgot
+                    <a href="#" style="color: red;">password?</a>
+                </span>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
