@@ -133,15 +133,17 @@ const main = () => {
     })
     window.addEventListener('resize', () => {
         if(window.innerWidth > 1024){
+            console.log('ok');
             toggleEle.classList.remove('on');
-            window.addEventListener('scroll', () => {
-                let scrollLocation = document.documentElement.scrollTop;
-                if (scrollLocation > 0) {
-                    document.querySelector('#header').classList.add('inverted');
-                } else {
-                    document.getElementById('header').classList.remove('inverted');
-                }
-            })
+        }
+    })
+
+    window.addEventListener('scroll', () => {
+        let scrollLocation = document.documentElement.scrollTop;
+        if (scrollLocation > 0) {
+            document.querySelector('#header').classList.add('inverted');
+        } else {
+            document.getElementById('header').classList.remove('inverted');
         }
     })
 
