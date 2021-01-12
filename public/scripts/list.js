@@ -65,6 +65,19 @@ const main = () => {
 
     getListItem();
     member();
+
+    // 토글
+    const toggleEle = document.querySelector('.toggle');
+    const toggleBtn = document.getElementById('toggle-btn');
+    
+    toggleBtn.addEventListener('click', () => {
+        toggleEle.classList.toggle('on');
+    })
+    window.addEventListener('resize', () => {
+        if(window.innerWidth > 1024){
+            toggleEle.classList.remove('on');
+        }
+    })
 }
 
 document.addEventListener('DOMContentLoaded', main);

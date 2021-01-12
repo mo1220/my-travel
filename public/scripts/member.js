@@ -47,25 +47,26 @@ async function logoutHandler (_cookie){
 }
 const member = () => {
     const cookie = Cookies.get('x_auth');
+    const loginEle = document.querySelectorAll('#navigation > li');
     if(cookie) {
-        document.querySelector('#login').style.display = 'none';
-        document.querySelector('#register').style.display = 'none';
-        document.querySelector('#mytrip').style.display = 'block';
-        document.querySelector('#logout').style.display = 'block';
+        loginEle[2].className = loginEle[2].className.replace('login', '');
+        loginEle[4].className = loginEle[4].className.replace('login', '');
+        loginEle[1].className = 'login';
+        loginEle[3].className = 'login';
     } else{
-        document.querySelector('#login').style.display = 'block';
-        document.querySelector('#register').style.display = 'block';
-        document.querySelector('#mytrip').style.display = 'none';
-        document.querySelector('#logout').style.display = 'none';
+        loginEle[1].className = loginEle[1].className.replace('login', '');
+        loginEle[3].className = loginEle[3].className.replace('login', '');
+        loginEle[2].className = 'login';
+        loginEle[4].className = 'login';
     }
 
     navigation.onclick = e => {
-        if(e.target.matches('#navigation > #login') || e.target.matches('#navigation > #register')) {
+        if(e.target.matches('#navigation > li > #login') || e.target.matches('#navigation > li > #register')) {
             e.preventDefault();
             render(e.target.id, e);
-        } else if(e.target.matches('#navigation > #mytrip')) {
+        } else if(e.target.matches('#navigation > li > #mytrip')) {
             location.href = "/mytrip";
-        } else if(e.target.matches('#navigation > #logout')) {
+        } else if(e.target.matches('#navigation > li > #logout')) {
             logoutHandler(cookie);
         }
     }

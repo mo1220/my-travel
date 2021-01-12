@@ -1,59 +1,3 @@
-$(function () {
-    recommand();
-
-    $('#main_banner').vegas({
-        slides: [
-            { src: '/images/main-banner/main-banner1.jpg' },
-            { src: '/images/main-banner/main-banner2.jpg' },
-            { src: '/images/main-banner/main-banner4.jpg' },
-            { src: '/images/main-banner/main-banner5.jpg' },
-            { src: '/images/main-banner/main-banner6.jpg' },
-            { src: '/images/main-banner/main-banner7.jpg' },
-            { src: '/images/main-banner/main-banner8.jpg' },
-            { src: '/images/main-banner/main-banner9.jpg' },
-            { src: '/images/main-banner/main-banner10.jpg' },
-        ]
-    })
-
-    window.addEventListener('scroll', () => {
-        let scrollLocation = document.documentElement.scrollTop;
-        if (scrollLocation > 0) {
-            document.querySelector('#header').classList.add('inverted');
-        } else {
-            document.getElementById('header').classList.remove('inverted');
-        }
-    })
-    // $(window).trigger('scroll');  
-
-    let dpFrom = $('#from').datepicker({
-        dateFormat: 'yy-mm-dd',
-        minDate: 0,
-        onSelect: function () {
-            dpTo.datepicker('option', 'minDate', dpFrom.datepicker('getDate'));
-        }
-    });
-    dpFrom.datepicker('setDate', new Date());
-
-    let dpTo = $('#to').datepicker({
-        dateFormat: 'yy-mm-dd',
-        minDate: 0,
-        onSelect: function () {
-            let from_date = dpFrom.datepicker('getDate');
-            let to_date = dpTo.datepicker('getDate');
-            let diff_date = to_date.getTime() - from_date.getTime();
-            diff_date === 0 && alert('가는날짜와 오는날짜가 같습니다. 다시 선택해 주세요.');
-        }
-    });
-    dpTo.datepicker('setDate', 4);
-
-    document.querySelector('#form-search').addEventListener('submit', (e) => {
-        e.preventDefault();
-        const from = document.getElementById('from').value;
-        const to = document.getElementById('to').value;
-
-        search(from, to);
-    })
-})
 
 const url = 'https://javascript-basic.appspot.com/searchLocation';
 const recommand = async () => {
@@ -158,12 +102,77 @@ const repeat = setInterval(typing = () => {
     }
 }, 200);
 
+
 const main = () => {
     if (!typingBool) { // 타이핑이 진행되지 않았다면 
         typingBool = true;
         setInterval(typing, 150); // 반복동작 
     }
+    recommand();
     member();
+
+    $('#main_banner').vegas({
+        slides: [
+            { src: '/images/main-banner/main-banner1.jpg' },
+            { src: '/images/main-banner/main-banner2.jpg' },
+            { src: '/images/main-banner/main-banner4.jpg' },
+            { src: '/images/main-banner/main-banner5.jpg' },
+            { src: '/images/main-banner/main-banner6.jpg' },
+            { src: '/images/main-banner/main-banner7.jpg' },
+            { src: '/images/main-banner/main-banner8.jpg' },
+            { src: '/images/main-banner/main-banner9.jpg' },
+            { src: '/images/main-banner/main-banner10.jpg' },
+        ]
+    })
+
+    const toggleEle = document.querySelector('.toggle');
+    const toggleBtn = document.getElementById('toggle-btn');
+    
+    toggleBtn.addEventListener('click', () => {
+        toggleEle.classList.toggle('on');
+    })
+    window.addEventListener('resize', () => {
+        if(window.innerWidth > 1024){
+            toggleEle.classList.remove('on');
+            window.addEventListener('scroll', () => {
+                let scrollLocation = document.documentElement.scrollTop;
+                if (scrollLocation > 0) {
+                    document.querySelector('#header').classList.add('inverted');
+                } else {
+                    document.getElementById('header').classList.remove('inverted');
+                }
+            })
+        }
+    })
+
+    let dpFrom = $('#from').datepicker({
+        dateFormat: 'yy-mm-dd',
+        minDate: 0,
+        onSelect: function () {
+            dpTo.datepicker('option', 'minDate', dpFrom.datepicker('getDate'));
+        }
+    });
+    dpFrom.datepicker('setDate', new Date());
+
+    let dpTo = $('#to').datepicker({
+        dateFormat: 'yy-mm-dd',
+        minDate: 0,
+        onSelect: function () {
+            let from_date = dpFrom.datepicker('getDate');
+            let to_date = dpTo.datepicker('getDate');
+            let diff_date = to_date.getTime() - from_date.getTime();
+            diff_date === 0 && alert('가는날짜와 오는날짜가 같습니다. 다시 선택해 주세요.');
+        }
+    });
+    dpTo.datepicker('setDate', 4);
+
+    document.querySelector('#form-search').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const from = document.getElementById('from').value;
+        const to = document.getElementById('to').value;
+
+        search(from, to);
+    })
 }
 
 document.addEventListener('DOMContentLoaded', main);

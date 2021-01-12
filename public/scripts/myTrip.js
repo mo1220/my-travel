@@ -69,7 +69,7 @@ const initTripsMap = (trips) => {
   const container = document.getElementById('map');
   const options = {
     center: new kakao.maps.LatLng(33.450701, 126.570667),
-    level: 11
+    level: 10
   }
 
   let map = new kakao.maps.Map(container, options); //지도생성
@@ -112,6 +112,20 @@ const generateMyTripsList = list => {
   }
 }
 
+const toggleHandler = () => {
+  const toggleEle = document.querySelector('.toggle');
+    const toggleBtn = document.getElementById('toggle-btn');
+    
+    toggleBtn.addEventListener('click', () => {
+        toggleEle.classList.toggle('on');
+    })
+    window.addEventListener('resize', () => {
+        if(window.innerWidth > 1024){
+            toggleEle.classList.remove('on');
+        }
+    })
+}
+
 const main = () => {
   member();
   let myTrips = Cookies.get('MYTRIPS');
@@ -119,8 +133,9 @@ const main = () => {
   if (!myTrips) {
     myTrips = [];
   } else trips = JSON.parse(myTrips);
+  
+  toggleHandler();
 
-  console.log(myTrips);
   trips && initTripsMap(trips);
   trips && generateMyTripsList(trips);
 

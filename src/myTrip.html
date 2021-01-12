@@ -28,15 +28,30 @@
                 </a>
 
                 <nav id="navigation" class="menu_items right">
-                    <a id="login" class="item" onclick="document.getElementById('id01').style.display='block'"
-                        style="width:auto;">LOGIN</a>
-                    <!-- 로그인 시 -->
-                    <a id="mytrip" class="item">My-Trip</a>
-                    <img src="images/line_maintop_gray.png" alt="메뉴 라인">
-                    <a id="register" class="item" onclick="document.getElementById('id01').style.display='block'"
-                        style="width:auto;">SIGN UP</a>
-                    <!-- 로그인 시 -->
-                    <a id="logout" class="item">LOGOUT</a>
+                    <ul id="navigation" class="menu toggle">
+                        <li>
+                            <a href="/" class="item">HOME</a>
+                        </li>
+                        <li>
+                            <a id="login" class="item"
+                            onclick="document.getElementById('id01').style.display='block'">LOGIN</a>
+                        </li>
+                        <!-- 로그인 시 -->
+                        <li>
+                            <a id="mytrip" class="item">My-Trip</a>
+                        </li>
+                        <li>
+                            <a id="register" class="item"
+                            onclick="document.getElementById('id01').style.display='block'">SIGN UP</a>
+                        </li>
+                        <!-- 로그인 시 -->
+                        <li>
+                            <a id="logout" class="item">LOGOUT</a>
+                        </li>
+                    </ul>
+                    <div id="toggle-btn">
+                        Header Menu Toggle Button
+                    </div>
                 </nav>
             </div>
         </header>
@@ -44,11 +59,15 @@
 
         <section id="body" class="detail">
             <div class="mytrip_container clear">
-                <button type="button" class="btn_view_All">지도 전체 보기</button>
+                <button type="button" class="btn_view_All">
+                    지도 전체 보기
+                </button>
                 <div id="map"></div>
-                <ul id="mytirp_list"></ul>
-                <button class="all_remove_btn right"
-                    style="margin-top: 10px; padding: 5px 10px; border-radius: 2rem; font-size: 1rem;">전체 삭제</button>
+                <ul id="mytirp_list">
+                    <button class="all_remove_btn">
+                        전체 삭제
+                    </button>
+                </ul>
             </div>
         </section>
     </div>

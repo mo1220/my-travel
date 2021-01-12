@@ -86,7 +86,6 @@ header{
 }
 .header_wrap{
     max-width: 1020px;
-    width: 100%;
     height: 100%;
     margin: 0 auto;
 }
@@ -99,26 +98,39 @@ header{
     background-position: center center;
 }
 
-header .menu_items{
+.header_wrap .menu_items .menu{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 15px;
-    height: 100%;
     box-sizing: border-box;
+    width: 100%;
+    height: 70px;
 }
-.menu_items a:hover {
+.header_wrap .menu_items a:hover {
     font-weight: bold;
 }
-header .menu_items .item{
+.header_wrap .menu_items .menu .item{
+    margin-right: 20px;
     font-size: 25px;
     color: #fff;
     font-family: 'Black Han Sans', sans-serif;
     font-family: 'Staatliches', cursive;
 }
-header .menu_items img{
-    margin-left: 10px;
-    margin-right: 10px;
+.header_wrap .menu_items .menu .login{
+    display: none;
+}
+.header_wrap .menu_items #toggle-btn{
+    display: none;
+    background: url('/images/toggle-btn.svg') no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    cursor: pointer;
+    text-indent: -9999px;
 }
 
 /* SECTION PART */
@@ -128,7 +140,7 @@ header .menu_items img{
 }
 #main_banner{
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 section .title_wrap{
     display: flex;
@@ -165,8 +177,8 @@ section .typing .typing-empty.on {
 }
 
 section .date_search_wrap{
-    margin: 20px auto 0;
-    max-width: 1020px;
+    margin: 50px auto;
+    max-width: 1024px;
     width: 90%;
     background-color: #fff;
     padding: 20px 30px 20px 50px;
@@ -180,6 +192,7 @@ section .date_search_wrap{
 section .date_search_wrap .panel-block{
     display: inline-block;
     margin-right: 20px;
+    width: 35%;
 }
 .date_search_wrap .trip_info_form label {
     display: block;
@@ -190,7 +203,7 @@ section .date_search_wrap .panel-block{
     margin-bottom: 10px;
 }
 .date_search_wrap .panel-block input[type='text'] {
-    width: 330px;
+    width: 100%;
     height: 45px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -223,35 +236,32 @@ section .date_search_wrap .panel-block{
     background-color: #fff;
     width: 100%;
     max-width: 1500px;
-    /* min-height: 1000px; */
     height: 500px;
     margin: 0 auto;
     padding: 20px 80px;
     box-sizing: border-box;
 }
 .list_bg .recommand_title{
-    max-width: 100%;
-    margin: 0 auto;
-    font-size: 20px;
+    width: 100%;
     font-family: 'Do Hyeon', sans-serif;
     font-size: 30px;
     padding: 10px 0;    
 }
 .list_bg .list_pannel ul{
     width: 100%;
-    margin: 0 auto;
+    overflow: hidden;
 }
 .list_bg .list_pannel ul li{
     float: left;
     width: 24%;
     margin-right: 10px;
-    padding-top: 10px;
+    margin-top: 20px;
 }
 .list_bg .list_pannel ul li:nth-of-type(4n){
     margin-right: 0;
 }
 .list_bg .list_pannel ul li .list_item_img{
-    width: 100%;
+    max-width: 100%;
     height: 300px;
     border-radius: 10px
 }
@@ -277,7 +287,7 @@ section .date_search_wrap .panel-block{
     float: left;
     width: 32%;
     margin-right: 10px;
-    padding-top: 10px;
+    margin-top: 10px;
     cursor: pointer;
 }
 .list_wrap .list_pannel ul li .list_item_img{
@@ -326,7 +336,6 @@ section .date_search_wrap .panel-block{
 }
 
 .detail_container{
-    width: 100%;
     max-width: 1080px;
     margin: 100px auto;
     background-color: #fff;
@@ -362,7 +371,7 @@ section .date_search_wrap .panel-block{
     max-width: 100%;
     height: 400px;
     background: #000;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-bottom: 30px;
 }
 .detail_desc{
@@ -383,44 +392,44 @@ section .date_search_wrap .panel-block{
 
 /* mytrip.html style */
 .mytrip_container{
-    clear: both;
-    width: 1080px;
+    display: flex;
+    max-width: 1080px;
     margin: 100px auto ;
     background-color: #fff;
     padding: 20px;
 }
 .mytrip_container .btn_view_All{
-    display: block;
-    margin-bottom: 10px;
-    position: relative;
-    left: 477px;
+    position: absolute;
+    top: 125px;
     padding: 7px 10px;
     border-radius: 2rem;
-    font-size: 1.2rem;
-}
-.btn_view_All:hover{
-    box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
+    font-size: 1rem;
 }
 .mytrip_container #map{
-    display: inline-block;
     width: 580px;
     height: 500px;
-    margin-right: 10px;
+    margin-right: 20px;
+    position: relative;
 }
-
  #mytirp_list{
-    display: inline-block;
+     position: relative;
     width: 480px;
     height: 500px;
     overflow: auto;
+    margin: 0 auto;
 }
-
+#mytirp_list .all_remove_btn{
+    position: relative;
+    padding: 7px 10px;
+    margin-bottom: 10px;
+    border-radius: 2rem;
+    font-size: 1rem;
+}
 .mytrip_container li{
     position: relative;
     margin: 0 3px 10px;
     padding: 15px 20px;
     border: 1px solid #D7DBE2;
-    width: 470px;
     height: 60px;
     box-sizing: border-box;
     box-shadow: 2px 2px 7px -3px rgba(0,0,0,0.2);
@@ -478,4 +487,239 @@ section .date_search_wrap .panel-block{
 }
 .item_remove:hover{
     cursor:pointer;
+    position: absolute;
+    bottom: 0; right: 0;
+}
+
+
+@media screen and (max-width: 1024px){
+    .header_wrap{
+        width: 100%;
+        background: #fff;
+    }
+    .header_wrap .logo_link{
+        background: url('/images/logo.png') no-repeat;
+        background-size: contain;
+        background-position: center center;
+        width: 250px;
+        margin-left: 10px;
+    }
+    .header_wrap .menu_items .toggle{
+        display: none;
+        height: auto;
+        position: absolute;
+        top:0;
+        left: 0;
+        margin-top: 70px;
+        text-align: center;
+        background: #fff;
+    }
+    .header_wrap .menu_items .toggle.on{
+        display: block;
+    }
+    .header_wrap .menu_items .toggle{
+        box-shadow: 3px 5px 5px rgba(0,0,0, 0.2);
+    }
+    .header_wrap .menu_items .toggle li {
+        border-top: 1px solid #e5e5e5;
+        padding: 8px 0;
+        margin-top: -1px
+    }
+    .header_wrap .menu_items .toggle li .item{
+        color: #000;
+    }
+    .header_wrap .menu_items .toggle li:nth-of-type(3),
+    .header_wrap .menu_items .toggle li:nth-of-type(4) {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .header_wrap .menu_items #toggle-btn{   
+        display: block;
+    }
+
+    section .main_title{
+        font-size: 70px;
+    }
+    section .sub_title{
+        font-size: 30px;
+    }
+    .date_search_wrap .btn_panel{
+        margin: 5px 0;
+    }
+    .date_search_wrap .btn_panel .btn_search {
+        width: 70px;
+        height: 70px;
+    }
+    .date_search_wrap .btn_panel img{
+        width: 33px;
+        position: absolute;
+        top: 1.2rem;
+        left: 1.3rem;
+    }
+
+    section .date_search_wrap .btn_panel span {
+        display: none;
+    }
+    .list_bg{
+        height: auto;
+    }
+    .list_bg .recommand_title{
+        font-size: 25px;
+    }
+    .list_bg .list_pannel ul li{
+        width: 48.5%;
+        margin-right: 15px; 
+    }
+    .list_bg .list_pannel ul li:nth-of-type(2n){
+        margin-right: 0;
+    }
+    .list_bg .list_pannel ul li .list_item_img{
+        width: 100%;
+        border-radius: 10px
+    }   
+    .list_bg .list_pannel ul li .list_item_name{
+        font-size: 20px;
+    }
+
+    /* list page */
+    #list_content .list_bg .list_pannel ul li{
+        width: 48%;
+    }
+
+    /* mytrip page */
+    .mytrip_container{
+        display: block;
+        padding: 30px 50px;
+    }
+    .mytrip_container #map{
+        display: block;
+        width: 100%;
+        height: 500px;
+        margin: 0 auto;
+    }
+    #mytirp_list{
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px){
+    .header_wrap .logo_link{
+        width: 200px;
+    }
+    section .main_title{
+        font-size: 50px;
+    }
+    section .sub_title{
+        font-size: 30px;
+    }
+    section .date_search_wrap{
+        padding: 20px 25px;
+    }
+    section .date_search_wrap .panel-block {
+        display: inline-block;
+        margin-right: 5px;
+    }
+    .date_search_wrap .trip_info_form label {
+        font-size: 16px;
+    }
+    .date_search_wrap .btn_panel .btn_search {
+        width: 55px;
+        height: 55px;
+    }
+    .date_search_wrap .panel-block input[type='text']{
+        font-size: 14px;
+    }
+    .date_search_wrap .btn_panel img{
+        width: 30px;
+        position: absolute;
+        top: 0.8rem;
+        left: 0.8rem;
+    }
+    .list_bg{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .list_bg .list_pannel ul li{
+        width: 100%;
+        margin-right: 0;
+    }
+    .list_bg .list_pannel ul li .list_item_img{
+        height: 350px;
+    }
+
+    /* list page */
+    #list_content .list_wrap .list_title {
+        font-size: 18px;
+    }
+    #list_content .list_bg .list_pannel ul li{
+        width: 100%;
+    }
+
+    /* detail page */
+    .detail_header button {
+        display: block;
+        padding: 5px 8px;
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-size: 16px;
+        position: relative;
+    }
+    .detail_header .detail_header_name{
+        font-size: 20px;
+    }
+    .mytrip_container #map {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    section .main_title{
+        font-size: 30px;
+    }
+    section .title_wrap{
+        height: 180px;
+        margin-top: 100px;
+    }
+    section .sub_title{
+        font-size: 20px;
+    }
+    .date_search_wrap .trip_info_form label {
+        font-size: 14px;
+    }
+    .date_search_wrap .btn_panel .btn_search {
+        width: 40px;
+        height: 40px;
+    }
+    .date_search_wrap .panel-block input[type='text']{
+        font-size: 12px;
+    }
+    .date_search_wrap .btn_panel img{
+        width: 25px;
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+    .list_bg{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .list_bg .list_pannel ul li .list_item_img{
+        height: 200px;
+    }
+
+    .detail_container #map{
+        height: 300px;
+    }
+
+    .mytrip_container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .mytirp_container #map{
+        height: 300px;
+    } 
+    .mytrip_container .item_name,
+    .mytrip_container .item_city_name{
+        font-size: 16px;
+    } 
 }
